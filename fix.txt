@@ -1,0 +1,25 @@
+ $user = mysqli_fetch_assoc($result);
+ mysqli_fetch_assoc can be used to fetch for data in the db
+
+
+
+ 
+// Set timeout period in seconds (e.g., 900 seconds = 15 minutes)
+$timeout_duration = 900;
+
+// Check if the user is logged in
+if (isset($_SESSION['username'])) {
+    // Check if the last activity timestamp is set
+    if (isset($_SESSION['last_activity'])) {
+        // Calculate the session's lifetime
+        $elapsed_time = time() - $_SESSION['last_activity'];
+        // If the session has expired, log out the user
+        if ($elapsed_time >= $timeout_duration) {
+            session_destroy();
+            header('Location: login.php?message=Session expired. Please log in again.');
+            exit();
+        }
+    }
+    // Update the last activity timestamp
+    $_SESSION['last_activity'] = time();
+}
