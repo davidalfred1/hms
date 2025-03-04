@@ -81,7 +81,7 @@ nav {
     padding: 10px;
 }
 
-/* main */
+/* MAIN */
 main#main {
     width: 100%;
     transition: margin-left 0.3s;
@@ -91,6 +91,23 @@ main#main {
     overflow-x: hidden;
 }
 
+/* ALERTS */
+.alert {
+    padding: 15px;
+    margin-top: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #5cb85c; /* Green background for success */
+    border-color: #4cae4c; /* Green border for success */
+}
+
+.alert.error {
+    background-color: #d9534f; /* Red background for error */
+    border-color: #d43f3a; /* Red border for error */
+}
+
+/* MEDIA QUERIES */
 @media screen and (min-width: 576px) {
  
 

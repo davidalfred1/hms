@@ -23,3 +23,23 @@ if (isset($_SESSION['username'])) {
     // Update the last activity timestamp
     $_SESSION['last_activity'] = time();
 }
+
+
+
+
+<?php
+$number = 10;
+
+if ($number > 5):
+    echo "The number is greater than 5.";
+else:
+    echo "The number is 5 or less.";
+endif;
+?>
+
+
+NOTE:
+- add exit(); after each header() to prevent further execution
+
+- to pull sql db and move to the your remote xampp: mysql -u root your_db_name < database_backup.sql
+

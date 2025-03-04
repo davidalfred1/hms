@@ -1,5 +1,6 @@
 <?php
 include ("config/dbcon.php");
+include ("includes/function.php");
 session_start();
 
 //Registration
@@ -13,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
     $query = "INSERT INTO users (firstname, lastname, username, email, password) VALUES ('$firstname', '$lastname', '$username', '$email', '$password')";
     if (mysqli_query($conn, $query)) {
         header('location: login.php?ok=Registration successful!');
+        exit();
     } else {
         echo "Error: " . mysqli_error($conn);
     }
@@ -40,14 +42,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
             exit();
         } else {
             header('Location: login.php?error=Invalid Password');
+            exit();
         }
     } else {
         header('Location: login.php?error=User not found');
+        exit();
     }
 }
 
 //Logout
-if (isset($_GET['logout'])) {
+if (isset($_GET['logout'])){
+    session_unset();
     session_destroy();
     header('Location: login.php?ok=Logout Successful');
     exit();

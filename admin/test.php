@@ -37,6 +37,96 @@
     captchaAttempt();
     captchaAttempt(); // This will be blocked
 
+
+
+     $x = username
+
+
+
+
+
+
+
+
+
+
+ if(5 < 10){
+    echo "Hey";
+    if(15 < 20){
+        echo "Hello";
+        if(25 < 30){
+            echo "Hello";
+        }
+    }
+}else {
+         echo "Bye";
+    }
+
+
+
+
+
+
+
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Text Display with While Loop</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            .output {
+                font-size: 20px;
+                color: #333;
+                padding: 10px;
+                border: 1px solid #ddd;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+    
+        <h1>Displaying Text with a While Loop</h1>
+        <div class="output">
+            <?php
+            // Initialize $i to 0
+            $i = 1;
+    
+            // Array of texts
+            $texts = [
+                "The quick brown fox jumps over the lazy dog.",
+                "PHP is a popular scripting language for web development.",
+                "Learning to code opens up new opportunities.",
+                "Practice makes perfect.",
+                "Consistency is key to success."
+            ];
+    
+            // Loop until $i reaches the count of $texts
+            while ($i <= count($texts)) {
+                echo $texts[$i - 1] . "<br>";  // Output text from the array
+                $i++;  // Increment to the next text
+            }
+            ?>
+        </div>
+    
+    </body>
+    </html>
+    
+
+
+
+
+
+
+
+
+    
 ?>
 
 

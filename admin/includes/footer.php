@@ -26,6 +26,14 @@
             const dropdown = document.getElementById(id);
             dropdown.classList.toggle("show");
         }
+        
+        // Automatically hide the alert message after 3 seconds
+        setTimeout(function() {
+            var alert = document.getElementById('alertMessage');
+            if (alert) {
+                alert.style.display = 'none';
+            }
+        }, 3000);
     </script>
 </body>
 </html>

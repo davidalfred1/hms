@@ -5,13 +5,15 @@
        <a onclick="toggleDropdown('inventory')">Inventory</a>
        <div id="inventory" class="dropdown-content">
             <a href="inventoryrequests.php">Requests</a>
-            <a href="inventoryitems.php">Items</a>
+            <a href="inventory-item.php">Items</a>
             <a href="inventoryreceived.php">Inventory Received</a>
             <a href="inventoryreports.php">Reports</a>
        </div>
 
        <a onclick="toggleDropdown('medication')">Medication</a>
-       <div id="medication" class="dropdown-content">
+       <div id="medication" 
+       value="" 
+       class="dropdown-content">
             <a href="inventoryrequests.php">
             Inventory Requests</a>
             <a href="inventoryrequests.php">
