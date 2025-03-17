@@ -2,31 +2,6 @@
  mysqli_fetch_assoc can be used to fetch for data in the db
 
 
-
- 
-// Set timeout period in seconds (e.g., 900 seconds = 15 minutes)
-$timeout_duration = 900;
-
-// Check if the user is logged in
-if (isset($_SESSION['username'])) {
-    // Check if the last activity timestamp is set
-    if (isset($_SESSION['last_activity'])) {
-        // Calculate the session's lifetime
-        $elapsed_time = time() - $_SESSION['last_activity'];
-        // If the session has expired, log out the user
-        if ($elapsed_time >= $timeout_duration) {
-            session_destroy();
-            header('Location: login.php?message=Session expired. Please log in again.');
-            exit();
-        }
-    }
-    // Update the last activity timestamp
-    $_SESSION['last_activity'] = time();
-}
-
-
-
-
 <?php
 $number = 10;
 
@@ -43,3 +18,28 @@ NOTE:
 
 - to pull sql db and move to the your remote xampp: mysql -u root your_db_name < database_backup.sql
 
+
+if(isset($_GET['delete'])){
+    $delete = $_GET['delete'];
+    $sql = "DELETE FROM users WHERE id=$id";
+    $query = mysqli_query($conn, $sql);
+    if($query){
+        header('location: viewuser.php?id=User Successfully Deleted!');
+        exit();
+    }
+}
+
+Fixed:
+- logout.php
+- loginsub.php
+- usersub.php
+- inv-item-sub.php
+- deleteuser.php
+- viewuser.php
+- inv-item.php
+- delete-inv-item.php
+- edit-user.php
+
+
+To-Do:
+- edit-inv-item.php

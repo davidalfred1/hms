@@ -28,12 +28,17 @@
         }
         
         // Automatically hide the alert message after 3 seconds
-        setTimeout(function() {
+        function hideAlert() {
             var alert = document.getElementById('alertMessage');
             if (alert) {
                 alert.style.display = 'none';
             }
-        }, 3000);
+        }
+
+        // Automatically hide the alert after 3 seconds
+        setTimeout(hideAlert, 5000);
+
+        document.getElementById('closeAlert').addEventListener('click', hideAlert);
     </script>
 </body>
 </html>

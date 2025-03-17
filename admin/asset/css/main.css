@@ -54,6 +54,7 @@ nav {
 
 #sidenav a:hover {
     background-color: rgb(137, 137, 137);
+    cursor: pointer;
 }
 
 #sidenav a {
@@ -74,6 +75,7 @@ nav {
 }
 
 .loggedin {
+    display: flex;
     position: absolute;
     bottom: 10px;
     right: 10px;
@@ -91,6 +93,17 @@ main#main {
     overflow-x: hidden;
 }
 
+#alertMessage {
+    display: flex;
+    justify-content: space-between;
+}
+
+#closeAlert {
+    cursor: pointer;
+    top: 10px;
+    color: white;
+}
+
 /* ALERTS */
 .alert {
     padding: 15px;
@@ -98,20 +111,21 @@ main#main {
     border: 1px solid transparent;
     border-radius: 4px;
     color: #fff;
-    background-color: #5cb85c; /* Green background for success */
-    border-color: #4cae4c; /* Green border for success */
+    background-color: #5cb85c;
+    /* Green background for success */
+    border-color: #4cae4c;
+    /* Green border for success */
 }
 
 .alert.error {
-    background-color: #d9534f; /* Red background for error */
-    border-color: #d43f3a; /* Red border for error */
+    background-color: #d9534f;
+    /* Red background for error */
+    border-color: #d43f3a;
+    /* Red border for error */
 }
 
 /* MEDIA QUERIES */
-@media screen and (min-width: 576px) {
- 
-
-}
+@media screen and (min-width: 576px) {}
 
 @media screen and (min-width: 768px) {
     /* Styles for medium devices (tablets) */
