@@ -3,24 +3,27 @@ include("../config/dbcon.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['edit-inv'])) {
     $itemId = $_POST['id'];
-    $name = $_POST['name'];
-    $description = $_POST['description'];
+    $inventoryitem = $_POST['inventoryitem'];
     $quantity = $_POST['quantity'];
+    $delieveryloc = $_POST['delieveryloc'];
+    $delieveryais = $_POST['delieveryais'];
+    $billto = $_POST['billto'];
 
     $query = "UPDATE inventory_items SET 
-        name = '$name', 
-        description = '$description', 
-        quantity = $quantity 
+        inventoryitem = '$inventoryitem', 
+        quantity =  '$quantity', 
+        delieveryloc = '$delieveryloc', 
+        delieveryais = '$delieveryais', 
+        billto = '$billto'
         WHERE id = $itemId";
 
     $result = mysqli_query($conn, $query);
 
     if ($result) {
-        header('location: view-inventory.php?success=Inventory Item Updated Successfully');
+        header('location: inv-item.php?success=Inventory Item Updated Successfully');
         exit();
     } else {
-        header('location: edit-inventory.php?error=Unable to Update Inventory Item');
+        header('location: edit-inv-item.php?error=Unable to Update Inventory Item');
         exit();
     }
 }
-?>

@@ -1,10 +1,10 @@
    
     <nav id="sidenav" class="sidenav">
-        <a id="close" onclick="closeSidenav()">x</a>
+        <a id="close" onclick="closeSidenav()"><i class="fa-solid fa-xmark"></i></a>
         <!-- Sidenav Links and Dropdowns -->
        <a onclick="toggleDropdown('inventory')">Inventory</a>
        <div id="inventory" class="dropdown-content">
-            <a href="inv-item.php">Items</a>
+            <a href="inv-item.php">Requests</a>
        </div>
 
        <a onclick="toggleDropdown('medication')">Medication</a>

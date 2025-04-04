@@ -1,4 +1,4 @@
-<?php 
+<?php
 include("includes/header.php");
 ?>
 
@@ -18,7 +18,19 @@ include("includes/header.php");
 
     <label for="password">Password:</label><br>
     <input type="password" id="password" name="password" required><br><br>
+    
+    
+    <label for="password">Password:</label><br>
+    <div class="input-box">
+        <input type="password" id="passd" name="password" required>
+        <i class="fa-solid fa-eye-slash" id="eyeicon"></i>
+    </div>
 
+
+    <!-- <i class="fa-solid fa-eye-slash"></i> -->
+
+
+    <!-- <i class="fa-solid fa-eye"></i> -->
     <label for="role">Role:</label><br>
     <select id="role" name="role">
         <option value="data_entry">Data Entry</option>
@@ -43,6 +55,22 @@ include("includes/header.php");
     <input type="submit" value="Add User" name="Adduser">
 </form>
 
-<?php 
+<script>
+let eyeicon = document.getElementById("eyeicon");
+let passd = document.getElementById("passd");
+
+eyeicon.onclick = function(){
+    if(passd.type == 'password'){
+        passd.type = 'text';
+        this.classList.toggle('fa-solid fa-eye-slash');
+        
+        
+    }else{
+        passd.type = 'password';
+        this.classList.toggle('fa-solid fa-eye');
+    }
+}
+</script>
+<?php
 include("includes/footer.php");
 ?>

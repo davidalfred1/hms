@@ -11,11 +11,11 @@ if (isset($_GET['id'])) {
     if ($result && mysqli_num_rows($result) > 0) {
         $item = mysqli_fetch_assoc($result);
     } else {
-        header('location: view-inventory.php?error=Item Not Found');
+        header('location: inv-item.php?error=Item Not Found');
         exit();
     }
 } else {
-    header('location: view-inventory.php?error=Invalid Item ID');
+    header('location: inv-item.php?error=Invalid Item ID');
     exit();
 }
 ?>
@@ -24,14 +24,23 @@ if (isset($_GET['id'])) {
 <form method="post" action="edit-inv-sub.php">
     <input type="hidden" name="id" value="<?php echo $item['id']; ?>">
     
-    <label for="name">Name:</label><br>
-    <input type="text" id="name" name="name" value="<?php echo ($item['name']); ?>" required><br><br>
+    <label for="Inventory Item">Inventory Item:</label><br>
+    <input type="text" id="inventoryitem" name="inventoryitem" value="<?php echo ($item['inventoryitem']); ?>" required><br><br>
 
-    <label for="description">Description:</label><br>
-    <textarea id="description" name="description" required><?php echo ($item['description']); ?></textarea><br><br>
+    <!-- <label for="description">Description:</label><br>
+    <textarea id="quantity" name="quantity" required><?php echo ($item['description']); ?></textarea><br><br> -->
 
     <label for="quantity">Quantity:</label><br>
     <input type="number" id="quantity" name="quantity" value="<?php echo ($item['quantity']); ?>" required><br><br>
+
+    <label for="Delievery Location">Delievery Location:</label><br>
+    <input type="text" id="delieveryloc" name="delieveryloc" value="<?php echo ($item['delieveryloc']); ?>" required><br><br>
+
+    <label for="Delievery Aisle">Delievery Aisle:</label><br>
+    <input type="text" id="delieveryais" name="delieveryais" value="<?php echo ($item['delieveryais']); ?>" required><br><br>
+
+    <label for="Billto">Bill To:</label><br>
+    <input type="text" id="billto" name="billto" value="<?php echo ($item['billto']); ?>" required><br><br>
 
     <input type="submit" value="Update Item" name="edit-inv">
 </form>
